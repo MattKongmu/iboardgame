@@ -27,7 +27,7 @@ boardgames = {
 def randoBoardgame(boardgames):
 
     selected_boardgame = random.choices(list(boardgames.keys()), weights=list(boardgames.values()))[0]
-    print(selected_boardgame.encode('utf-8'))
+    #print(selected_boardgame.encode('utf-8'))
     return selected_boardgame
 
 chosen_boardgame = randoBoardgame(boardgames)
