@@ -27,7 +27,7 @@ boardgames = {
 def randoBoardgame(boardgames):
 
     selected_boardgame = random.choices(list(boardgames.keys()), weights=list(boardgames.values()))[0]
-    #print(selected_boardgame.encode('utf-8'))
+    print(selected_boardgame.encode('utf-8'))
     return selected_boardgame
 
 chosen_boardgame = randoBoardgame(boardgames)
@@ -40,7 +40,7 @@ body = f"Your boardgame for the week is: {chosen_boardgame}."
 #make email and send email
 def Email(sender_email, recipient_email, subject, body):
     server = smtplib.SMTP("ommitted")
-    server.login("Ommitted Credentials")
+    server.login(username, password) #these hopefully are stored in a yaml or json in a secure location
     message = f"Subject: {subject}\n\n{body}"
     server.sendmail(sender_email, recipient_email, message.encode("utf-8"))
     server.quit()
